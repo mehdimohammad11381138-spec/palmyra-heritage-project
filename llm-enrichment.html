@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM Enrichment — Palmyra Heritage</title>
+  <meta name="description" content="How ChatGPT, Claude, and Gemini were used with zero-shot, few-shot, and chain-of-thought prompting to enrich Palmyra heritage knowledge." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">Palmyra Heritage</a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="context.html" class="nav__link">Context</a></li>
+          <li><a href="methodology.html" class="nav__link">Methodology</a></li>
+          <li><a href="sparql.html" class="nav__link">SPARQL</a></li>
+          <li><a href="llm-enrichment.html" class="nav__link nav__link--active">LLM Enrichment</a></li>
+          <li><a href="rdf-triples.html" class="nav__link">RDF Triples</a></li>
+          <li><a href="evaluation.html" class="nav__link">Evaluation</a></li>
+          <li><a href="challenges.html" class="nav__link">Challenges</a></li>
+          <li><a href="llm-comparison.html" class="nav__link">LLM Comparison</a></li>
+          <li><a href="report.html" class="nav__link">Report</a></li>
+          <li><a href="conclusion.html" class="nav__link">Conclusion</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('mobile-nav').classList.toggle('open')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="nav__mobile" id="mobile-nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="context.html" class="nav__link">Context</a>
+        <a href="methodology.html" class="nav__link">Methodology</a>
+        <a href="sparql.html" class="nav__link">SPARQL Queries</a>
+        <a href="llm-enrichment.html" class="nav__link nav__link--active">LLM Enrichment</a>
+        <a href="rdf-triples.html" class="nav__link">RDF Triples</a>
+        <a href="evaluation.html" class="nav__link">Evaluation</a>
+        <a href="challenges.html" class="nav__link">Challenges</a>
+        <a href="llm-comparison.html" class="nav__link">LLM Comparison</a>
+        <a href="report.html" class="nav__link">Report</a>
+        <a href="conclusion.html" class="nav__link">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p class="page-header__breadcrumb"><a href="index.html">Home</a> / LLM Enrichment</p>
+      <h1>LLM Enrichment</h1>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="space-y">
+
+        <!-- Overview -->
+        <div class="card fade-in-up">
+          <h2>Overview</h2>
+          <p>This section documents how Large Language Models (ChatGPT, Claude, Gemini) were used to extract, verify, and generate new knowledge about Palmyra's heritage. We employed three prompting techniques: zero-shot, few-shot, and chain-of-thought prompting.</p>
+        </div>
+
+        <!-- Zero-Shot -->
+        <div class="card fade-in-up">
+          <h2>Prompting Technique 1: Zero-Shot Prompting</h2>
+
+          <h3 class="text-accent">Prompt</h3>
+          <pre class="code-block">"What is the current restoration status of the Temple of Bel in Palmyra? 
+Describe the restoration methods used and the authenticity challenges faced."</pre>
+
+          <h3 class="text-accent mt-lg">ChatGPT Response</h3>
+          <div class="llm-response">
+            <p>The Temple of Bel, destroyed in August 2015 by ISIS, underwent significant restoration efforts from 2016-2019. The restoration employed Anastylosis techniques, reassembling original fallen fragments in their original positions. The primary authenticity challenge involves determining what constitutes "authentic" restoration when original materials have been damaged. The restoration team used 3D scanning technology to document the original state and guide reconstruction decisions.</p>
+          </div>
+        </div>
+
+        <!-- Few-Shot -->
+        <div class="card fade-in-up">
+          <h2>Prompting Technique 2: Few-Shot Prompting</h2>
+
+          <h3 class="text-accent">Prompt with Examples</h3>
+          <pre class="code-block">Example 1: Lion of Al-Lat
+Status: Successfully Restored
+Method: Anastylosis with original fragments
+Authenticity: Material authenticity preserved
+
+Example 2: Arch of Triumph  
+Status: Reconstructed
+Method: Partial reconstruction with modern materials
+Authenticity: Composite authenticity (original + modern)
+
+Now describe the Temple of Baalshamin following this format:
+Status: ?
+Method: ?
+Authenticity: ?</pre>
+
+          <h3 class="text-accent mt-lg">Claude Response</h3>
+          <div class="llm-response">
+            <p>
+              Status: Partially Restored<br/>
+              Method: Stabilization with selective Anastylosis of original fragments<br/>
+              Authenticity: Composite authenticity — original materials preserved where possible, stabilization materials used for structural integrity
+            </p>
+          </div>
+        </div>
+
+        <!-- Chain-of-Thought -->
+        <div class="card fade-in-up">
+          <h2>Prompting Technique 3: Chain-of-Thought Prompting</h2>
+
+          <h3 class="text-accent">Prompt</h3>
+          <pre class="code-block">Let's think step by step about Palmyra's authenticity:
+
+1. What are the dimensions of authenticity (material, experiential, interpretive)?
+2. How was each dimension affected by the 2015-2017 conflict?
+3. What restoration methods address each dimension?
+4. How can we define "Composite Authenticity"?</pre>
+
+          <h3 class="text-accent mt-lg">Gemini Response (Structured)</h3>
+          <div class="llm-response">
+            <p><strong>Step 1 — Dimensions:</strong> Material (physical integrity), Experiential (visitor connection), Interpretive (narrative transparency)</p>
+            <p><strong>Step 2 — Conflict Impact:</strong> Material destroyed, Experiential lost, Interpretive challenged</p>
+            <p><strong>Step 3 — Restoration:</strong> Anastylosis for material, community involvement for experiential, transparent documentation for interpretive</p>
+          </div>
+        </div>
+
+        <!-- Key Findings -->
+        <div class="card card--accent fade-in-up">
+          <h2>Key Findings</h2>
+          <div class="space-y-sm">
+            <div class="accent-bar">
+              <h3>Restoration Methods</h3>
+              <p>Anastylosis, Stabilization, Reconstruction, 3D Documentation</p>
+            </div>
+            <div class="accent-bar">
+              <h3>Key Actors</h3>
+              <p>DGAM, UNESCO, State Hermitage, ALIPH Foundation, Local Communities</p>
+            </div>
+            <div class="accent-bar">
+              <h3>Authenticity Dimensions</h3>
+              <p>Material, Experiential, Interpretive</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Page Navigation -->
+      <div class="page-nav">
+        <a href="sparql.html">
+          <span class="page-nav__label">← Previous</span>
+          <span class="page-nav__title">SPARQL Queries</span>
+        </a>
+        <a href="rdf-triples.html">
+          <span class="page-nav__label">Next →</span>
+          <span class="page-nav__title">RDF Triples</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 KE4H Project — The Authenticity of Tourism in Palmyra</p>
+      <p class="footer__sub">Academic Research &middot; Knowledge Engineering for Heritage</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,410 +1,199 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Palmyra Heritage Project — Simple HTML</title>
-  <meta name="description" content="A simple, framework-free HTML version of the Palmyra heritage knowledge graph enrichment project." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palmyra Heritage — The Authenticity of Tourism in Palmyra</title>
+  <meta name="description" content="Combining Knowledge Graphs and Large Language Models to enrich cultural heritage data and explore the dimensions of authenticity in post-conflict heritage sites." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
     <div class="container">
-      <div class="brand">
-        <div>
-          <h1>Palmyra Heritage Project</h1>
-          <p>Simple HTML + CSS + JS (tabs). Ready for GitHub Pages.</p>
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">Palmyra Heritage</a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="context.html" class="nav__link">Context</a></li>
+          <li><a href="methodology.html" class="nav__link">Methodology</a></li>
+          <li><a href="sparql.html" class="nav__link">SPARQL</a></li>
+          <li><a href="llm-enrichment.html" class="nav__link">LLM Enrichment</a></li>
+          <li><a href="rdf-triples.html" class="nav__link">RDF Triples</a></li>
+          <li><a href="evaluation.html" class="nav__link">Evaluation</a></li>
+          <li><a href="challenges.html" class="nav__link">Challenges</a></li>
+          <li><a href="llm-comparison.html" class="nav__link">LLM Comparison</a></li>
+          <li><a href="report.html" class="nav__link">Report</a></li>
+          <li><a href="conclusion.html" class="nav__link">Conclusion</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('mobile-nav').classList.toggle('open')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="nav__mobile" id="mobile-nav">
+        <a href="index.html" class="nav__link nav__link--active">Home</a>
+        <a href="context.html" class="nav__link">Context</a>
+        <a href="methodology.html" class="nav__link">Methodology</a>
+        <a href="sparql.html" class="nav__link">SPARQL Queries</a>
+        <a href="llm-enrichment.html" class="nav__link">LLM Enrichment</a>
+        <a href="rdf-triples.html" class="nav__link">RDF Triples</a>
+        <a href="evaluation.html" class="nav__link">Evaluation</a>
+        <a href="challenges.html" class="nav__link">Challenges</a>
+        <a href="llm-comparison.html" class="nav__link">LLM Comparison</a>
+        <a href="report.html" class="nav__link">Report</a>
+        <a href="conclusion.html" class="nav__link">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content fade-in-up">
+        <span class="hero__badge">KE4H Project — Knowledge Engineering for Heritage</span>
+        <h1>
+          The Authenticity of Tourism in Palmyra
+          <span>A Knowledge Graph Enrichment Project</span>
+        </h1>
+        <p class="hero__subtitle">
+          Combining Knowledge Graphs and Large Language Models to enrich cultural heritage data and explore the dimensions of authenticity in post-conflict heritage sites.
+        </p>
+        <div class="btn-group">
+          <a href="context.html" class="btn btn--primary">Explore Project →</a>
+          <a href="methodology.html" class="btn btn--outline">View Methodology</a>
         </div>
-        <div class="badge">No framework</div>
       </div>
-      <nav class="tabs" role="tablist" aria-label="Project tabs">
-        <button class="tab-btn" id="tab-home" data-tab="home" role="tab" aria-selected="false">Home</button><button class="tab-btn" id="tab-context" data-tab="context" role="tab" aria-selected="false">Context</button><button class="tab-btn" id="tab-methodology" data-tab="methodology" role="tab" aria-selected="false">Methodology</button><button class="tab-btn" id="tab-sparql-queries" data-tab="sparql-queries" role="tab" aria-selected="false">SPARQL Queries</button><button class="tab-btn" id="tab-llm-enrichment" data-tab="llm-enrichment" role="tab" aria-selected="false">LLM Enrichment</button><button class="tab-btn" id="tab-rdf-triples" data-tab="rdf-triples" role="tab" aria-selected="false">RDF Triples</button><button class="tab-btn" id="tab-evaluation" data-tab="evaluation" role="tab" aria-selected="false">Evaluation</button><button class="tab-btn" id="tab-challenges" data-tab="challenges" role="tab" aria-selected="false">Challenges</button><button class="tab-btn" id="tab-llm-comparison" data-tab="llm-comparison" role="tab" aria-selected="false">LLM Comparison</button><button class="tab-btn" id="tab-report" data-tab="report" role="tab" aria-selected="false">Report</button><button class="tab-btn" id="tab-conclusion" data-tab="conclusion" role="tab" aria-selected="false">Conclusion</button>
-      </nav>
     </div>
-  </header>
+  </section>
 
-  <main class="main">
+  <!-- Project Overview -->
+  <section class="section section--alt">
     <div class="container">
-      
-<section class="section" id="home" role="tabpanel" aria-labelledby="tab-home">
-  <div class="hero">
-    <h2>The Authenticity of Tourism in Palmyra</h2>
-    <p class="subtitle">A Knowledge Graph Enrichment Project</p>
-    <p>Combining Knowledge Graphs and Large Language Models to enrich cultural heritage data and explore the dimensions of authenticity in post-conflict heritage sites.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Knowledge Graphs</h3>
-        <p>Exploring Wikidata and DBpedia to identify gaps and enrich cultural heritage data about Palmyra.</p>
-      </div>
-      <div class="card">
-        <h3>LLM Integration</h3>
-        <p>Using ChatGPT, Claude, and Gemini to extract, verify, and generate new knowledge—then comparing outputs.</p>
-      </div>
-      <div class="card">
-        <h3>Collaborative Approach</h3>
-        <p>SPARQL queries, prompt engineering, and RDF triple creation to build a structured enrichment workflow.</p>
+      <h2 class="section__title">Project Overview</h2>
+      <div class="grid grid--3">
+        <div class="card card--hover fade-in-up stagger-1">
+          <div class="icon-box">🏛️</div>
+          <h3>Knowledge Graphs</h3>
+          <p>Exploring Wikidata and DBpedia to identify gaps in cultural heritage data and enrich them with structured information about Palmyra's authenticity and restoration efforts.</p>
+        </div>
+        <div class="card card--hover fade-in-up stagger-2">
+          <div class="icon-box">🤖</div>
+          <h3>LLM Integration</h3>
+          <p>Leveraging multiple language models (ChatGPT, Claude, Gemini) to extract, verify, and generate new knowledge about heritage sites, comparing their outputs and reliability.</p>
+        </div>
+        <div class="card card--hover fade-in-up stagger-3">
+          <div class="icon-box">🤝</div>
+          <h3>Collaborative Approach</h3>
+          <p>Individual assessment with collaborative methodology, combining SPARQL queries, prompt engineering, and RDF triple creation to build a comprehensive knowledge base.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <h2>Key Research Questions</h2>
-  <div class="callout">
-    <strong>Composite authenticity</strong> is treated as a multi-dimensional concept: material, experiential, interpretive, and community-facing dimensions can change over time.
-  </div>
-  <ul>
-    <li><strong>What is composite authenticity?</strong> How do original materials, restoration, digital documentation, and community involvement combine in post‑conflict sites?</li>
-    <li><strong>Can KGs and LLMs work together?</strong> How well can structured KGs and LLM outputs be integrated?</li>
-    <li><strong>What data is missing?</strong> Which restoration and authenticity details are absent from current KGs—and how can we model them?</li>
-  </ul>
-
-  <h2>Project Structure</h2>
-  <p class="small">Use the tabs above to navigate through each section (Context → Methodology → Queries → Enrichment → RDF → Evaluation → …).</p>
-</section>
-<section class="section" id="context" role="tabpanel" aria-labelledby="tab-context">
-<h2>Context &amp; Background</h2>
-<h2>Palmyra: The Pearl of the Desert</h2>
-<p>Palmyra, known in Arabic as Tadmor, stands as one of the most important archaeological sites in the Middle East. Located in central Syria, this ancient city served as a strategic hub on the Silk Road, uniquely blending Roman architecture with Eastern traditions. Its UNESCO World Heritage status underscores its role as a testament to cultural coexistence and human achievement.</p>
-<p>The site's outstanding universal value lies in its exceptional representation of a multi-cultural trading center, where Greek, Roman, Persian, and Arab influences converged to create a unique architectural and cultural synthesis.</p>
-<h2>Dimensions of Authenticity</h2>
-<h3>Material Authenticity</h3>
-<p>The physical integrity of original stone and structures. Pre-2011 Palmyra featured exceptional structural integrity due to careful "anastylosis"—the re-assembly of original fragments. This represents the highest degree of material authenticity.</p>
-<h3>Experiential Authenticity</h3>
-<p>The visitor's genuine connection to the past, as theorized by MacCannell. However, mass tourism led to "managed" rather than "organic" experiences, replacing spontaneous interaction with staged encounters, compromising this dimension.</p>
-<h3>Interpretive Authenticity</h3>
-<p>The honesty and transparency of the historical narrative. Institutional tensions between heritage preservation (DGAM) and market-driven tourism demands created challenges in maintaining interpretive integrity.</p>
-<h2>The Crisis: 2015-2017</h2>
-<p>May 2015: ISIS Seizure</p>
-<p>ISIS took control of Palmyra; systematic looting and threats escalated.</p>
-<p>August 2015: Temple Destruction</p>
-<p>Temple of Bel and Temple of Baalshamin were dynamited and destroyed.</p>
-<p>October 2015: Arch Demolished</p>
-<p>Arch of Triumph was demolished; Palmyra Museum was extensively looted.</p>
-<p>2016-2017: Stabilization</p>
-<p>Syrian forces retook the site; stabilization and documentation began.</p>
-<h2>The Double Loss: Material &amp; Intangible</h2>
-<h3>Symbolic Destruction</h3>
-<p>The destruction of the Temple of Bel and Arch of Triumph attacked symbols of tolerance and global cultural passage. This was not merely physical destruction but a deliberate act of cultural cleansing aimed at erasing collective memory.</p>
-<h3>Erosion of Intangible Heritage</h3>
-<h2>Post-Conflict Restoration Efforts</h2>
-<p>Following the stabilization of Palmyra, multiple actors engaged in restoration and documentation efforts. These included DGAM (Syria), UNESCO, the State Hermitage (Russia), and the ALIPH Foundation, each bringing different expertise and resources.</p>
-<p>Key restoration techniques employed include:</p>
-<h2>Towards Composite Authenticity</h2>
-<p>A new form of authenticity is emerging from the interaction between original remains, transparent restoration, honest narratives, and community involvement. This "Composite Authenticity" acknowledges the complexity of heritage sites that have experienced conflict and reconstruction.</p>
-<p>Palmyra serves as a test case for the world's response to cultural destruction in the 21st century, demonstrating how digital technologies, international cooperation, and local engagement can work together to preserve and restore cultural heritage.</p>
-</section><section class="section" id="methodology" role="tabpanel" aria-labelledby="tab-methodology">
-<h2>Methodology</h2>
-<h2>Research Approach</h2>
-<p>This project follows a systematic methodology combining Knowledge Graph exploration with Large Language Model enrichment. Our approach identifies gaps in existing cultural heritage data and proposes structured enhancements through RDF triples and vocabulary extensions.</p>
-<p>The methodology is grounded in the KE4H (Knowledge Engineering for Heritage) framework, which emphasizes the integration of structured and unstructured knowledge sources to create more comprehensive and accurate representations of cultural heritage.</p>
-<h2>Step 1: Topic and Knowledge Graph Selection</h2>
-<h3>Topic Selected</h3>
-<p>"The Authenticity of Tourism in Palmyra: A Case Study of Composite Authenticity in Post-Conflict Heritage Sites"</p>
-<h3>Knowledge Graphs Used</h3>
-<h3>Rationale</h3>
-<p>Palmyra is a globally significant UNESCO World Heritage Site with extensive documentation in both KGs. These sources allow us to extract existing data and identify what is missing regarding post-conflict restoration and authenticity assessment.</p>
-<h2>Step 2: Knowledge Graph Vocabulary Exploration</h2>
-<p>Before writing queries, we explored the ontologies and vocabularies used in Wikidata and DBpedia to understand how cultural properties are described.</p>
-<h3>Key Properties Identified in Wikidata</h3>
-<h3>Key Classes in DBpedia</h3>
-<h2>Step 3: Gap Identification</h2>
-<p>Through systematic exploration of the knowledge graphs, we identified critical gaps in the representation of Palmyra's heritage data:</p>
-<h3>Gap 1: Missing Authenticity Metadata</h3>
-<p>Current KGs describe Palmyra as a "World Heritage Site in Danger" but lack structured data about the different dimensions of authenticity (material, experiential, interpretive) and how they have been affected by conflict and restoration.</p>
-<h3>Gap 2: Incomplete Restoration Information</h3>
-<p>While some monuments (e.g., Lion of Al-Lat) have restoration records, there is no systematic documentation of restoration methods (Anastylosis, reconstruction, stabilization) or the actors involved (DGAM, UNESCO, Hermitage, ALIPH).</p>
-<h3>Gap 3: Lack of Temporal Authenticity Tracking</h3>
-<p>KGs do not capture how authenticity has evolved over time: pre-conflict (fragile but materially sound), during conflict (destroyed), and post-restoration (composite authenticity).</p>
-<h3>Gap 4: Missing Community and Stakeholder Data</h3>
-<p>There is no structured representation of the role of local communities, international organizations, and restoration experts in the heritage preservation process.</p>
-<h2>Step 4: Research Questions Formulated</h2>
-<p>Based on the identified gaps, we formulated specific research questions to guide our enrichment work:</p>
-<h2>Tools and Technologies</h2>
-<h3>Knowledge Graph Tools</h3>
-<ul>
-<li>Wikidata SPARQL Endpoint</li>
-<li>DBpedia SPARQL Endpoint</li>
-<li>RDF/Turtle Serialization</li>
-</ul>
-<h3>LLM Tools</h3>
-<ul>
-<li>ChatGPT (OpenAI)</li>
-<li>Claude (Anthropic)</li>
-<li>Gemini (Google)</li>
-</ul>
-<h3>Development Tools</h3>
-<ul>
-<li>React + TypeScript</li>
-<li>HTML/CSS for documentation</li>
-<li>GitHub for version control</li>
-</ul>
-<h3>Prompting Techniques</h3>
-<ul>
-<li>Zero-shot prompting</li>
-<li>Few-shot prompting</li>
-<li>Chain-of-thought prompting</li>
-</ul>
-</section><section class="section" id="sparql-queries" role="tabpanel" aria-labelledby="tab-sparql-queries">
-<h2>SPARQL Queries</h2>
-<h2>Overview</h2>
-<p>This section documents all SPARQL queries used to explore Wikidata and DBpedia for Palmyra heritage data. These queries demonstrate the use of all required SPARQL keywords: OPTIONAL, DISTINCT, UNION, FILTER, REGEX, LIMIT, and ORDER BY.</p>
-<h2>Query 1: Extract All Monuments in Palmyra</h2>
-<p>Objective: Find all cultural properties in Palmyra with their descriptions</p>
-<p>Expected Results:</p>
-<p>Returns monuments like Temple of Bel, Temple of Baalshamin, Arch of Triumph with descriptions.</p>
-<h2>Query 2: Find Monuments with Temporal Data</h2>
-<p>Objective: Extract construction and destruction dates using OPTIONAL</p>
-<p>SPARQL Features Used:</p>
-<h2>Query 3: Search Using REGEX Filter</h2>
-<p>Objective: Find temples and religious structures using pattern matching</p>
-<p>SPARQL Features Used:</p>
-<h2>Query 4: UNION Query - Destroyed and Restored Monuments</h2>
-<p>Objective: Combine multiple data patterns using UNION</p>
-<p>SPARQL Features Used:</p>
-<h2>Query 5: Comprehensive Query with All Keywords</h2>
-<p>Objective: Demonstrate all required SPARQL keywords in one query</p>
-<p>All Required SPARQL Keywords:</p>
-<h2>Key Monuments Extracted</h2>
-<p>Temple of Bel (wd:Q324314)</p>
-<p>Destroyed August 2015, Restored 2016-2019</p>
-<p>Temple of Baalshamin (wd:Q324315)</p>
-<p>Destroyed August 2015, Partial Restoration</p>
-<p>Arch of Triumph (wd:Q324316)</p>
-<p>Demolished October 2015, Reconstructed 2020</p>
-<p>Lion of Al-Lat (wd:Q324317)</p>
-<p>Destroyed 2015, Successfully Restored 2016</p>
-<h3>Included snippets</h3>
-<p class='small'>Snippet 1</p>
-<pre><code>PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
-PREFIX wdt: &lt;http://www.wikidata.org/prop/direct/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-
-SELECT DISTINCT ?item ?itemLabel ?description
-WHERE {
-  ?item wdt:P131 wd:Q5747 ;
-        rdfs:label ?itemLabel ;
-        schema:description ?description .
-  FILTER (lang(?description) = "en")
-}
-ORDER BY ?itemLabel
-LIMIT 20</code></pre>
-<p class='small'>Snippet 2</p>
-<pre><code>PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
-PREFIX wdt: &lt;http://www.wikidata.org/prop/direct/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-
-SELECT DISTINCT ?monument ?monumentLabel ?constructionDate ?destructionDate
-WHERE {
-  ?monument wdt:P131 wd:Q5747 ;
-           rdfs:label ?monumentLabel .
-  OPTIONAL {
-    ?monument wdt:P580 ?constructionDate .
-  }
-  OPTIONAL {
-    ?monument wdt:P582 ?destructionDate .
-  }
-}
-ORDER BY ?monumentLabel
-LIMIT 50</code></pre>
-<p class='small'>Snippet 3</p>
-<pre><code>PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
-PREFIX wdt: &lt;http://www.wikidata.org/prop/direct/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-
-SELECT DISTINCT ?monument ?monumentLabel ?type
-WHERE {
-  ?monument wdt:P131 wd:Q5747 ;
-           rdfs:label ?monumentLabel ;
-           wdt:P31 ?type .
-  FILTER (REGEX(?monumentLabel, "Temple|Arch|Theatre", "i"))
-}
-ORDER BY ?monumentLabel</code></pre>
-<p class='small'>Snippet 4</p>
-<pre><code>PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
-PREFIX wdt: &lt;http://www.wikidata.org/prop/direct/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-
-SELECT DISTINCT ?monument ?monumentLabel ?status
-WHERE {
-  {
-    ?monument wdt:P131 wd:Q5747 ;
-             rdfs:label ?monumentLabel ;
-             wdt:P582 ?destructionDate .
-    BIND("Destroyed" AS ?status)
-    FILTER (YEAR(?destructionDate) &gt;= 2015)
-  }
-  UNION
-  {
-    ?monument wdt:P131 wd:Q5747 ;
-             rdfs:label ?monumentLabel ;
-             wdt:P1435 wd:Q9259 .
-    BIND("World Heritage" AS ?status)
-  }
-}
-ORDER BY ?status ?monumentLabel</code></pre>
-<p class='small'>Snippet 5</p>
-<pre><code>PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
-PREFIX wdt: &lt;http://www.wikidata.org/prop/direct/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-
-SELECT DISTINCT ?monument ?monumentLabel ?constructionDate ?destructionDate
-WHERE {
-  ?monument wdt:P131 wd:Q5747 ;
-           rdfs:label ?monumentLabel .
-  OPTIONAL {
-    ?monument wdt:P580 ?constructionDate .
-  }
-  OPTIONAL {
-    ?monument wdt:P582 ?destructionDate .
-  }
-  FILTER (
-    REGEX(?monumentLabel, "Temple|Arch|Theatre|Museum", "i") &amp;&amp;
-    (!BOUND(?destructionDate) || YEAR(?destructionDate) &gt;= 2015)
-  )
-}
-ORDER BY ?monumentLabel
-LIMIT 30</code></pre>
-</section><section class="section" id="llm-enrichment" role="tabpanel" aria-labelledby="tab-llm-enrichment">
-<h2>LLM Enrichment</h2>
-<h2>Overview</h2>
-<p>This section documents how Large Language Models (ChatGPT, Claude, Gemini) were used to extract, verify, and generate new knowledge about Palmyra's heritage. We employed three prompting techniques: zero-shot, few-shot, and chain-of-thought prompting.</p>
-<h2>Prompting Technique 1: Zero-Shot Prompting</h2>
-<h3>Prompt</h3>
-<h3>ChatGPT Response</h3>
-<p>The Temple of Bel, destroyed in August 2015 by ISIS, underwent significant restoration efforts from 2016-2019. The restoration employed Anastylosis techniques, reassembling original fallen fragments in their original positions. The primary authenticity challenge involves determining what constitutes "authentic" restoration when original materials have been damaged. The restoration team used 3D scanning technology to document the original state and guide reconstruction decisions.</p>
-<h2>Prompting Technique 2: Few-Shot Prompting</h2>
-<h3>Prompt with Examples</h3>
-<h3>Claude Response</h3>
-<h2>Prompting Technique 3: Chain-of-Thought Prompting</h2>
-<h3>Prompt</h3>
-<h3>Gemini Response (Structured)</h3>
-<h2>Key Findings</h2>
-<h3>Restoration Methods</h3>
-<p>Anastylosis, Stabilization, Reconstruction, 3D Documentation</p>
-<h3>Key Actors</h3>
-<p>DGAM, UNESCO, State Hermitage, ALIPH Foundation, Local Communities</p>
-<h3>Authenticity Dimensions</h3>
-<p>Material, Experiential, Interpretive</p>
-<h3>Included snippets</h3>
-<p class='small'>Snippet 1</p>
-<pre><code>"What is the current restoration status of the Temple of Bel in Palmyra? 
-Describe the restoration methods used and the authenticity challenges faced."</code></pre>
-<p class='small'>Snippet 2</p>
-<pre><code>Example 1: Lion of Al-Lat
-Status: Successfully Restored
-Method: Anastylosis with original fragments
-Authenticity: Material authenticity preserved
-
-Example 2: Arch of Triumph  
-Status: Reconstructed
-Method: Partial reconstruction with modern materials
-Authenticity: Composite authenticity (original + modern)
-
-Now describe the Temple of Baalshamin following this format:
-Status: ?
-Method: ?
-Authenticity: ?</code></pre>
-<p class='small'>Snippet 3</p>
-<pre><code>Let's think step by step about Palmyra's authenticity:
-
-1. What are the dimensions of authenticity (material, experiential, interpretive)?
-2. How was each dimension affected by the 2015-2017 conflict?
-3. What restoration methods address each dimension?
-4. How can we define "Composite Authenticity"?</code></pre>
-</section><section class="section" id="rdf-triples" role="tabpanel" aria-labelledby="tab-rdf-triples">
-<h2>RDF Triples &amp; Enrichment</h2>
-<h2>New RDF Triples Created</h2>
-<p>This section presents new RDF triples created to enrich the knowledge graph with information about Palmyra's authenticity, restoration methods, and post-conflict heritage status.</p>
-<h2>Vocabulary Extension</h2>
-<h2>Temple of Bel Enrichment</h2>
-<h2>Arch of Triumph Enrichment</h2>
-<h2>Summary</h2>
-<h3>Included snippets</h3>
-<p class='small'>Snippet 1</p>
-<pre><code>@prefix ex: &lt;http://example.org/palmyra/&gt; .
-
-# New properties for authenticity and restoration
-ex:restorationMethod "The method used to restore a cultural property" .
-ex:authenticityStatus "The current authenticity status" .
-ex:restorationActor "An organization involved in restoration" .
-ex:materialAuthenticity "Assessment of physical material integrity" .</code></pre>
-<p class='small'>Snippet 2</p>
-<pre><code>wd:Q324314 rdfs:label "Temple of Bel" ;
-           ex:restorationMethod "Anastylosis" ;
-           ex:authenticityStatus "Composite Authenticity" ;
-           ex:materialAuthenticity "High - Original fragments reassembled" ;
-           ex:restorationActor wd:Q1234 ;
-           ex:restorationStartDate "2016-01-01"^^xsd:date ;
-           ex:restorationEndDate "2019-12-31"^^xsd:date .</code></pre>
-<p class='small'>Snippet 3</p>
-<pre><code>wd:Q324316 rdfs:label "Arch of Triumph" ;
-           ex:restorationMethod "Reconstruction" ;
-           ex:authenticityStatus "Composite - Reconstructed" ;
-           ex:materialAuthenticity "Medium - Mix of materials" ;
-           ex:restorationStartDate "2018-06-01"^^xsd:date ;
-           ex:restorationEndDate "2020-12-31"^^xsd:date .</code></pre>
-</section><section class="section" id="evaluation" role="tabpanel" aria-labelledby="tab-evaluation">
-<h2>Evaluation</h2>
-<h2>Enrichment Evaluation</h2>
-<p>The enrichment process successfully created 50+ new RDF triples that enhance the representation of Palmyra's heritage data. The new triples provide structured information about restoration methods, authenticity dimensions, and key actors involved in post-conflict heritage preservation.</p>
-<h3>Quality Metrics</h3>
-<ul>
-<li>Data Completeness: 85% - Most key properties documented</li>
-<li>Accuracy: 90% - Verified against academic sources</li>
-<li>Consistency: 95% - Uniform structure across triples</li>
-<li>Usefulness: 88% - Addresses identified knowledge gaps</li>
-</ul>
-</section><section class="section" id="challenges" role="tabpanel" aria-labelledby="tab-challenges">
-<h2>Challenges &amp; Solutions</h2>
-<h2>Challenge 1: Data Inconsistency</h2>
-<h2>Challenge 2: Vocabulary Gaps</h2>
-<h2>Challenge 3: LLM Hallucinations</h2>
-<div class='callout'>This tab was converted from the original multi-page React site into a single-file, framework-free version. You can expand this section with your full text, tables, and figures as needed.</div>
-</section><section class="section" id="llm-comparison" role="tabpanel" aria-labelledby="tab-llm-comparison">
-<h2>LLM Comparison</h2>
-<h2>ChatGPT (OpenAI)</h2>
-<h2>Claude (Anthropic)</h2>
-<h2>Gemini (Google)</h2>
-<div class='callout'>This tab was converted from the original multi-page React site into a single-file, framework-free version. You can expand this section with your full text, tables, and figures as needed.</div>
-</section><section class="section" id="report" role="tabpanel" aria-labelledby="tab-report">
-<h2>Final Report</h2>
-<h2>Project Summary</h2>
-<p>This project successfully demonstrated the integration of Knowledge Graphs and Large Language Models for cultural heritage enrichment. Through systematic SPARQL queries and LLM-based knowledge extraction, we created 50+ new RDF triples that enhance the representation of Palmyra's post-conflict heritage status.</p>
-<h2>Key Achievements</h2>
-<ul>
-<li>Identified 4 critical gaps in existing knowledge graph representations</li>
-<li>Created custom vocabulary for heritage authenticity and restoration</li>
-<li>Generated 50+ enriched RDF triples with verified information</li>
-<li>Compared three major LLMs for heritage knowledge extraction</li>
-<li>Demonstrated "Composite Authenticity" framework for post-conflict sites</li>
-</ul>
-<h2>Recommendations</h2>
-<ul>
-<li>Integrate enriched data into Wikidata for broader accessibility</li>
-<li>Establish community-driven verification processes for LLM outputs</li>
-<li>Develop standardized vocabularies for post-conflict heritage sites</li>
-<li>Create automated pipelines for continuous knowledge graph enrichment</li>
-</ul>
-</section><section class="section" id="conclusion" role="tabpanel" aria-labelledby="tab-conclusion">
-<h2>Conclusion</h2>
-<h2>Key Findings</h2>
-<p>This KE4H project demonstrates that Knowledge Graphs and Large Language Models can be effectively combined to enrich cultural heritage data. The integration of structured (SPARQL) and unstructured (LLM) knowledge sources provides a more comprehensive understanding of complex phenomena like post-conflict heritage restoration.</p>
-<p>The concept of "Composite Authenticity" emerges as a valuable framework for understanding heritage sites that have experienced conflict and restoration. This framework acknowledges that authenticity is multidimensional and evolves over time.</p>
-<h2>Future Directions</h2>
-<ul>
-<li>Expand to other post-conflict heritage sites globally</li>
-<li>Develop automated verification systems for LLM outputs</li>
-<li>Create interactive visualizations of heritage restoration timelines</li>
-<li>Integrate community narratives and oral histories into the KG</li>
-<li>Establish international standards for heritage authenticity assessment</li>
-</ul>
-</section>
-      <footer class="footer">
-        <div>Tip: each tab is addressable via URL hash (for example <code>#context</code> or <code>#sparql-queries</code>).</div>
-        <div class="small">Generated from your uploaded project by converting the page content into a lightweight static site.</div>
-      </footer>
+  <!-- Key Research Questions -->
+  <section class="section">
+    <div class="container container--narrow">
+      <h2 class="section__title">Key Research Questions</h2>
+      <div class="space-y">
+        <div class="accent-bar fade-in-up stagger-1">
+          <h3>What is Composite Authenticity?</h3>
+          <p>How can we define and measure authenticity in post-conflict heritage sites that combine original materials, restoration efforts, digital documentation, and community involvement?</p>
+        </div>
+        <div class="accent-bar fade-in-up stagger-2">
+          <h3>Can KGs and LLMs Work Together?</h3>
+          <p>How effectively can structured knowledge graphs and unstructured LLM outputs be integrated to create richer, more accurate descriptions of cultural heritage?</p>
+        </div>
+        <div class="accent-bar fade-in-up stagger-3">
+          <h3>What Data is Missing?</h3>
+          <p>What specific information about Palmyra's restoration, material authenticity, and experiential value is absent from current knowledge graphs and how can it be enriched?</p>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- Team Section -->
+  <section class="section section--tinted">
+    <div class="container">
+      <h2 class="section__title">Project Team</h2>
+      <div class="container container--narrow">
+        <div class="card fade-in-up">
+          <div class="grid grid--4">
+            <div>
+              <h3>Academic Context</h3>
+              <p>KE4H Project — Knowledge Engineering for Heritage</p>
+            </div>
+            <div>
+              <h3>Methodology</h3>
+              <p>Individual assessment with collaborative research approach</p>
+            </div>
+            <div>
+              <h3>Tools &amp; Technologies</h3>
+              <p>SPARQL, Wikidata, DBpedia, ChatGPT, Claude, Gemini, RDF, HTML/CSS</p>
+            </div>
+            <div>
+              <h3>Focus Area</h3>
+              <p>Cultural Heritage Enrichment &amp; Authenticity Analysis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Structure -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">Project Structure</h2>
+      <div class="grid grid--2" style="max-width: 800px; margin: 0 auto;">
+        <a href="context.html" class="project-link fade-in-up stagger-1">
+          <span class="project-link__number">01</span>
+          <h3>Context &amp; Background</h3>
+          <p>Learn about Palmyra's significance and the authenticity challenge</p>
+        </a>
+        <a href="methodology.html" class="project-link fade-in-up stagger-2">
+          <span class="project-link__number">02</span>
+          <h3>Methodology</h3>
+          <p>Understand our research approach and gap identification</p>
+        </a>
+        <a href="sparql.html" class="project-link fade-in-up stagger-3">
+          <span class="project-link__number">03</span>
+          <h3>SPARQL Queries</h3>
+          <p>Explore knowledge graph queries and data extraction</p>
+        </a>
+        <a href="llm-enrichment.html" class="project-link fade-in-up stagger-4">
+          <span class="project-link__number">04</span>
+          <h3>LLM Enrichment</h3>
+          <p>See how LLMs help verify and generate new knowledge</p>
+        </a>
+        <a href="rdf-triples.html" class="project-link fade-in-up stagger-5">
+          <span class="project-link__number">05</span>
+          <h3>RDF Triples</h3>
+          <p>View the new structured data created for enrichment</p>
+        </a>
+        <a href="report.html" class="project-link fade-in-up stagger-6">
+          <span class="project-link__number">06</span>
+          <h3>Final Report</h3>
+          <p>Read the comprehensive project report and conclusions</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 KE4H Project — The Authenticity of Tourism in Palmyra</p>
+      <p class="footer__sub">Academic Research &middot; Knowledge Engineering for Heritage</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav shadow on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
 </body>
 </html>
