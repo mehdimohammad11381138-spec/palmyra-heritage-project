@@ -26,6 +26,7 @@
           <li><a href="llm-comparison.html" class="nav__link">LLM Comparison</a></li>
           <li><a href="report.html" class="nav__link">Report</a></li>
           <li><a href="conclusion.html" class="nav__link">Conclusion</a></li>
+          <li><a href="#gallery" class="nav__link">Gallery</a></li>
         </ul>
         <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('mobile-nav').classList.toggle('open')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -43,12 +44,15 @@
         <a href="llm-comparison.html" class="nav__link">LLM Comparison</a>
         <a href="report.html" class="nav__link">Report</a>
         <a href="conclusion.html" class="nav__link">Conclusion</a>
+        <a href="#gallery" class="nav__link">Gallery</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero hero--with-bg">
+    <div class="hero__bg-image" style="background-image: url('images/palmyra-colonnade-sunset.png')"></div>
+    <div class="hero__overlay"></div>
     <div class="container">
       <div class="hero__content fade-in-up">
         <span class="hero__badge">KE4H Project — Knowledge Engineering for Heritage</span>
@@ -61,7 +65,7 @@
         </p>
         <div class="btn-group">
           <a href="context.html" class="btn btn--primary">Explore Project →</a>
-          <a href="methodology.html" class="btn btn--outline">View Methodology</a>
+          <a href="methodology.html" class="btn btn--outline btn--outline-light">View Methodology</a>
         </div>
       </div>
     </div>
@@ -107,6 +111,69 @@
         <div class="accent-bar fade-in-up stagger-3">
           <h3>What Data is Missing?</h3>
           <p>What specific information about Palmyra's restoration, material authenticity, and experiential value is absent from current knowledge graphs and how can it be enriched?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section section--dark" id="gallery">
+    <div class="container">
+      <h2 class="section__title section__title--light">Palmyra Through the Lens</h2>
+      <p class="gallery__intro">Visual documentation of Palmyra's ancient ruins — from its magnificent colonnades and Roman theatre to the devastating impact of conflict, captured through satellite imagery, ground-level photography, and preserved artifacts.</p>
+
+      <div class="gallery">
+        <!-- Large featured image -->
+        <div class="gallery__item gallery__item--featured fade-in-up stagger-1">
+          <div class="gallery__image-wrapper">
+            <img src="images/palmyra-colonnade-sunset.png" alt="The Great Colonnade of Palmyra at sunset with moonrise" loading="lazy" />
+            <div class="gallery__caption">
+              <h3>The Great Colonnade at Sunset</h3>
+              <p>The iconic colonnaded street of Palmyra, stretching over 1 kilometer, bathed in golden light with the moon rising above the ancient ruins.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two medium images -->
+        <div class="gallery__item gallery__item--medium fade-in-up stagger-2">
+          <div class="gallery__image-wrapper">
+            <img src="images/palmyra-roman-theatre.png" alt="Aerial view of the Roman Theatre of Palmyra" loading="lazy" />
+            <div class="gallery__caption">
+              <h3>The Roman Theatre</h3>
+              <p>An aerial perspective of the remarkably preserved Roman theatre, showcasing classical architectural mastery in the heart of the Syrian desert.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--medium fade-in-up stagger-3">
+          <div class="gallery__image-wrapper">
+            <img src="images/palmyra-before-after-photo.png" alt="Before and after comparison — Temple of Bel at Palmyra" loading="lazy" />
+            <div class="gallery__caption">
+              <h3>Temple of Bel — Then &amp; Now</h3>
+              <p>A powerful juxtaposition: a photograph of the Temple of Bel held against its current remains, documenting the devastating loss caused by conflict.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two smaller images -->
+        <div class="gallery__item gallery__item--small fade-in-up stagger-4">
+          <div class="gallery__image-wrapper">
+            <img src="images/palmyra-satellite-comparison.png" alt="Satellite imagery comparing Palmyra's Temple of Bel in 2010 and 2015" loading="lazy" />
+            <div class="gallery__caption">
+              <h3>Satellite Evidence of Destruction</h3>
+              <p>Satellite comparison of the Temple of Bel complex: September 2010 (intact) vs. August 2015 (destroyed), providing crucial documentation for heritage assessment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--small fade-in-up stagger-5">
+          <div class="gallery__image-wrapper">
+            <img src="images/palmyra-lion-sculpture.png" alt="The Lion of Al-lāt statue from Palmyra" loading="lazy" />
+            <div class="gallery__caption">
+              <h3>The Lion of Al-lāt</h3>
+              <p>The restored limestone sculpture of the Lion of Al-lāt, a 15-tonne Palmyrene artifact symbolizing protection, carefully reconstructed after being damaged during the conflict.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
